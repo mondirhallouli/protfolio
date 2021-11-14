@@ -1,0 +1,36 @@
+@use "../utils" as *;
+@use "../general" as *;
+
+.footer {
+  padding-top: rem(26);
+  padding-bottom: rem(26);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20) rem(60);
+  }
+
+  &__text {
+    display: inline-block;
+    font-family: $font;
+    font-size: rem(16);
+    font-weight: $fw-md;
+    color: $yellow;
+  }
+
+  &__media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: rem(16);
+    }
+  }
+}

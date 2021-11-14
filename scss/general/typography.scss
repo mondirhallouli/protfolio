@@ -1,0 +1,29 @@
+@use "../utils" as *;
+@use "colors" as *;
+
+// FONT
+$font: "Roboto Mono", monospace;
+$form-font: "Open Sans", sans-serif;
+$fw-bd: 700;
+$fw-md: 500;
+$fs-lg: rem(58);
+$fs-md: rem(36);
+$fs-sm: rem(32);
+
+h1,
+h2,
+h3 {
+  font-family: $font;
+  font-weight: $fw-bd;
+  line-height: 1;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  font-family: $font;
+  font-weight: $fw-md;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}

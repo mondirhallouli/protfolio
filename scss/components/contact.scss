@@ -1,0 +1,69 @@
+@use "../utils" as *;
+@use "../general" as *;
+
+.contact {
+  background-color: $yellow;
+
+  .section-title {
+    color: $black;
+    margin-bottom: rem(32);
+  }
+
+  .form {
+    width: rem(300);
+    margin: 0 auto;
+
+    @include breakpoint-up(medium) {
+      width: rem(500);
+    }
+
+    // input fields styles
+    &__field,
+    &__message,
+    // maintain background and text styles after webkit browesers' autofill
+    &__field:-webkit-autofill,
+    &__field:-webkit-autofill:hover,
+    &__field:-webkit-autofill:focus {
+      display: block;
+      width: 100%;
+      border: none;
+      padding: rem(9) 0 rem(9) rem(20);
+      margin-bottom: rem(20);
+      background-color: $black;
+      font-family: $form-font;
+      font-size: rem(16);
+      color: $form-text;
+      -webkit-text-fill-color: $form-text;
+      box-shadow: 0 0 0px 1000px $black inset;
+      transition: background-color 5000s ease-in-out 0s;
+
+      @include breakpoint-up(medium) {
+        padding: rem(16) 0 rem(16) rem(20);
+      }
+    }
+
+    &__message {
+      resize: vertical;
+      min-height: rem(160);
+    }
+
+    &__submit {
+      display: block;
+      margin: 0 auto;
+      padding: rem(13) rem(53);
+      border: solid rem(2) $black;
+      background: transparent;
+      font-family: $font;
+      font-size: rem(18);
+      font-weight: $fw-md;
+      color: $black;
+      cursor: pointer;
+      transition: background 200ms ease-in-out, color 200ms ease-in-out;
+
+      &:hover {
+        background-color: $black;
+        color: $yellow;
+      }
+    }
+  }
+}

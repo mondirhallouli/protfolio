@@ -1,0 +1,15 @@
+@use "../utils" as *;
+
+.container {
+  max-width: rem(1088);
+  margin: 0 auto;
+}
+
+.pd-all {
+  padding: rem(60) rem(36) rem(70);
+}
+
+.pd-sides {
+  padding-left: rem(36);
+  padding-right: rem(36);
+}

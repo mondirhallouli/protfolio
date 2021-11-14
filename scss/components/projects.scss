@@ -1,0 +1,43 @@
+@use "../utils" as *;
+@use "../general" as *;
+
+.projects {
+  background-color: $black;
+
+  .section-title {
+    color: $yellow;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(50) rem(16);
+    flex-wrap: wrap;
+
+    @include breakpoint-up(medium) {
+      gap: rem(50) rem(24);
+    }
+  }
+
+  &__card {
+    width: rem(300);
+  }
+
+  .card-img {
+    width: 100%;
+    height: rem(247);
+    margin-bottom: rem(16);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

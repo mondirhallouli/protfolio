@@ -1,0 +1,25 @@
+@use "../utils" as *;
+@use "../general" as *;
+
+.skills {
+  background-color: $yellow;
+
+  .section-title {
+    color: $black;
+  }
+
+  &__box {
+    min-width: rem(300);
+    max-width: rem(719);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: rem(20);
+
+    @include breakpoint-up(medium) {
+      gap: rem(48);
+    }
+  }
+}

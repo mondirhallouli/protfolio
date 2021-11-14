@@ -1,0 +1,63 @@
+@use "colors" as *;
+@use "../utils" as *;
+@use "typography" as *;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $black;
+}
+
+.hide-on-mobile {
+  @include breakpoint-down(large) {
+    display: none;
+  }
+}
+
+.hide-on-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+.menu-link {
+  color: $yellow;
+}
+
+.menu-link:hover {
+  text-decoration: underline;
+}
+
+.section-title {
+  font-size: $fs-sm;
+  text-align: center;
+  margin-bottom: rem(66);
+
+  @include breakpoint-up(large) {
+    font-size: $fs-md;
+  }
+}
+
+// BUTTONS
+
+// projects buttons
+.card-link {
+  background-color: $yellow;
+  padding: rem(16) rem(54);
+  font-weight: $fw-md;
+  color: $black;
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

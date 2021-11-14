@@ -1,0 +1,183 @@
+@use "../utils" as *;
+@use "../general" as *;
+
+.header {
+  height: 100vh;
+  padding: rem(40) rem(36);
+  position: relative;
+  background-color: $black;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(100);
+    position: relative;
+
+    &__logo {
+      font-size: rem(18);
+      font-weight: $fw-bd;
+      color: $yellow;
+    }
+
+    &__menu {
+      .menu-item:not(:last-child) {
+        margin-right: rem(38);
+      }
+    }
+
+    &__menu-btn {
+      width: rem(40);
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      // padding: rem(4) rem(2);
+      position: fixed;
+      right: rem(36);
+
+      span {
+        display: block;
+        width: 100%;
+        height: rem(7);
+        background-color: $yellow;
+        border: solid rem(2) $black;
+        border-radius: rem(5);
+        opacity: 1;
+        transform-origin: rem(3) rem(4);
+        transition: all 150ms ease-in-out;
+
+        &:not(:last-child) {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+
+    // MENU BUTTON TO CLOSE BUTTON(X) STYLES
+    .active {
+      span:first-child {
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  // menu links styles
+  .menu-item {
+    list-style: none;
+    display: inline-block;
+  }
+
+  // mobile menu styles
+  .mobile__menu {
+    background-color: $menu-bg;
+    width: calc(100% - rem(72));
+    padding: rem(40) rem(36);
+    left: 50%;
+    visibility: hidden;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.88);
+    position: fixed;
+    z-index: 100;
+    transition: all 200ms ease-in-out;
+
+    @include breakpoint-up(medium) {
+      width: 75%;
+    }
+
+    .menu-item {
+      display: block;
+      text-align: center;
+      visibility: hidden;
+      transition: all 200ms ease-in-out;
+    }
+
+    .menu-link {
+      padding: rem(16) rem(16);
+      visibility: hidden;
+      transition: all 200ms ease-in-out;
+    }
+
+    // show/ hide mobile menu styles
+    &.show {
+      visibility: visible;
+
+      .menu-item,
+      .menu-link {
+        visibility: visible;
+      }
+    }
+  }
+
+  // HERO CONTENT STYLES
+  .hero {
+    @include breakpoint-up(large) {
+      gap: rem(80);
+    }
+
+    &__text {
+      margin: 0 auto rem(144);
+    }
+
+    &__title {
+      margin-bottom: rem(28);
+      font-size: rem(36);
+      font-weight: $fw-bd;
+      text-align: center;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: $white;
+
+      .job-title {
+        color: $yellow;
+      }
+
+      @include breakpoint-up(large) {
+        font-size: $fs-lg;
+      }
+    }
+
+    &__media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__link:not(:last-child) {
+      margin-right: rem(16);
+    }
+
+    .arrow {
+      display: block;
+      width: rem(73);
+      margin: 0 auto;
+      padding: rem(16);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      animation: scrlbtn 2.5s ease-in-out infinite;
+    }
+  }
+}
+
+// scroll arrow animation
+@keyframes scrlbtn {
+  0% {
+    transform: translateY(rem(-16));
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(rem(16));
+    opacity: 0;
+  }
+}
