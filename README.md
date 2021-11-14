@@ -24,5 +24,3 @@ My personal portfolio website.
   - Javascript events
   - Responsive menu
   - Functional contact form
-
-  [edamam]: https://developer.edamam.com/
